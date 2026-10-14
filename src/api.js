@@ -1,8 +1,7 @@
-
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL || 'http://localhost:8080'}/api`,
+  baseURL: `${import.meta.env.VITE_API_URL || 'https://ai-smart-hospital-backend-4cpf.onrender.com'}/api`,
 })
 
 api.interceptors.request.use((config) => {
@@ -11,7 +10,6 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-// Pull a readable message out of any axios error
 export const errMsg = (e) =>
   e?.response?.data?.message ||
   (e?.response?.status === 401 ? 'Please log in again' : e?.message) ||

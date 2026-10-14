@@ -6,7 +6,11 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': { target: 'http://localhost:8080', changeOrigin: true },
+      '/api': {
+        target: 'https://ai-smart-hospital-backend-4cpf.onrender.com',
+        changeOrigin: true,
+        secure: true,
+      },
     },
   },
 })
